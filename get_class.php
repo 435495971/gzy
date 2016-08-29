@@ -14,7 +14,7 @@ foreach ($result[0] as $value) {
 	$tmp[$num]=$value;
 }
 ksort($tmp);
-$tmp[]=$result[1]);
+$tmp[]=$result[1];
 echo '</br></br>';
 echo json_encode($tmp,JSON_UNESCAPED_UNICODE);
 ?>
