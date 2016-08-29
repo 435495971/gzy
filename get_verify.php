@@ -1,12 +1,17 @@
 <?php
 require('curl.php');
 session_start();
-$result=get_Web_Page('http://jw.gzucm.edu.cn/');
+$result=get_Web_Page('http://210.38.108.23/');
 preg_match('/Set-Cookie:(.*);/iU',$result['header'],$str);
 $cookie = $str[1];
-if(!preg_match('/id="verifyDiv" style="display:none;"/iU',$result['content'],$str))
-	$img=get_img('http://jw.gzucm.edu.cn/yzm?d='.time(),$cookie);
-else
+$_SESSION['cookie']=$cookie;
+if(!preg_match('/id="verifyDiv" style="display:none;"/iU',$result['content'],$str)){
+	$_SESSION['verify']=true;
+	$img=get_img('http://210.38.108.23/yzm?d='.time(),$cookie);	
+}
+else{
 	$img=get_img('http://119.29.238.68/wechat/no_verify.png');
+	$_SESSION['verify']=false;
+}
 echo $img['content'];
 ?>
