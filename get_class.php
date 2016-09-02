@@ -3,9 +3,46 @@ session_start();
 require('curl.php');
 $cookie=$_SESSION['cookie'];
 {
-	$url='http://210.38.108.23/xsbjkbcx!getKbRq.action?xnxqdm=20152&zc=1';
+	$url='http://210.38.108.23/xsgrkbcx!getKbRq.action?xnxqdm=20161&zc='.$_POST['value'];
 	$result=get_Web_Page($url,$cookie);
-	echo $result['content'];
+	$result=json_decode($result['content']);
+	$date=$result[1];
+	$class=$result[0]; 
+	$result=array();
+	foreach ($date as $value) {
+		$result[$value->xqmc]['date']=$value;
+	}
+	foreach ($class as $value) {
+		$v=new stdClass();
+		$v->jcdm=$value->jcdm;
+		$v->classname=$value->kcmc;
+		$v->teachername=$value->teaxms;
+		$v->dayinweek=$value->xq;
+		$v->address=$value->jxcdmc;
+		$v->content=$value->sknrjj;
+		$v->lengthoftime=$value->xs;
+		$v->style=$value->jxhjmc;
+		$result[$value->xq]['class'][]=$v;
+	}
+	$newresult=array();
+	$k=0;
+	foreach ($result as  $xq){
+		$k++;
+		for($i=0;$i<count(@$xq['class']);$i++){
+			$key=$i;
+			for($j=$i;$j<count($xq['class']);$j++){
+				if($xq['class'][$key]->jcdm > $xq['class'][$j]->jcdm)
+					$key=$j;
+			}
+			if($key!=$i){
+				$tmp=$xq['class'][$i];
+				$xq['class'][$i]=$xq['class'][$key];
+				$xq['class'][$key]=$tmp;
+			}
+		}
+		$newresult['key'.$k]=$xq;
+	}
+	$newresult['length']=count($newresult);
+	echo json_encode($newresult,JSON_UNESCAPED_UNICODE);
 }
-
 ?>

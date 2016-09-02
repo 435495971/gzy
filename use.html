@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Analyze</title>
+	<style>
+	.title{height: 30px;width: 100px;}
+	.white{background-color:white;height: 50px;}
+	.content{background-color: rgb(174, 238, 238);}
+	</style>
+</head>
+<body>
+<table border="1">
+	<tr>
+		<td colspan="8">
+		<button>上一周</button>
+		<select name="select" id="select" onchange=change(this.value)>
+			<option value="1" id="o01">第01周</option>
+			<option value="2" id="o02">第02周</option>
+			<option value="3" id="o03">第03周</option>
+			<option value="4" id="o04">第04周</option>
+			<option value="5" id="o05">第05周</option>
+			<option value="6" id="o06">第06周</option>
+			<option value="7" id="o07">第07周</option>
+			<option value="8" id="o08">第08周</option>
+			<option value="9" id="o09">第09周</option>
+			<option value="10" id="o10">第10周</option>
+			<option value="11" id="o11">第11周</option>
+			<option value="12" id="o12">第12周</option>
+			<option value="13" id="o13">第13周</option>
+			<option value="14" id="o14">第14周</option>
+			<option value="15" id="o15">第15周</option>
+			<option value="16" id="o16">第16周</option>
+			<option value="17" id="o17">第17周</option>
+			<option value="18" id="o18">第18周</option>
+			<option value="19" id="o19">第19周</option>
+			<option value="20" id="o20">第20周</option>
+			<option value="21" id="o21">第21周</option>
+			<option value="22" id="o22">第22周</option>
+			<option value="23" id="o23">第23周</option>
+			<option value="24" id="o24">第24周</option>
+		</select>
+		</td>
+	</tr>
+	<tr id="title">
+		<td class="title"></td>
+		<td class="title"></td>
+		<td class="title"></td>
+		<td class="title"></td>
+		<td class="title"></td>
+		<td class="title"></td>
+		<td class="title"></td>
+		<td class="title"></td>
+	</tr>
+	<tr id="c01">
+		<td class="left">第01节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c02">
+		<td class="left">第02节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c03">
+		<td class="left">第03节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c04">
+		<td class="left">第04节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c05">
+		<td class="left">第05节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c06">
+		<td class="left">第06节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c07">
+		<td class="left">第07节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c08">
+		<td class="left">第08节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c09">
+		<td class="left">第09节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c10">
+		<td class="left">第10节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c11">
+		<td class="left">第11节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c12">
+		<td class="left">第12节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c13">
+		<td class="left">第13节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+	<tr id="c14">
+		<td class="left">第14节</td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+		<td class="white"></td>
+	</tr>
+</table>
+<script type="text/javascript">
+function ajax(value){
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp =new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp =new ActiveXObject("Microsoft.XMLHTTP");
+	 }
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState==4 && xmlhttp.status==200 ){
+			try{
+				var obj = JSON.parse(xmlhttp.responseText);
+			}
+			catch(e){
+				alert("哎哟，一不小心出错了"+xmlhttp.responseText);
+			}
+			for(i=1;i<=obj.length;i++){
+				this_=obj['key'+i]
+				document.getElementById('title').children[i].innerHTML=gettime(this_['date'])
+				document.getElementById('title').children[i].id=this_['date'].xqmc;
+				for(cls in this_['class']){
+					jcdm=this_['class'][cls]['jcdm'].substr(0,2);
+					box=document.createElement('div');
+					teachername=document.createElement('div');
+					teachername.innerHTML='教师：'+this_['class'][cls]['teachername'];
+					classname=document.createElement('div');
+					classname.innerHTML='课程:'+this_['class'][cls]['classname'];
+					address=document.createElement('div');
+					address.innerHTML='地址:'+this_['class'][cls]['address'];
+					content=document.createElement('div');
+					content.innerHTML='授课内容:'+this_['class'][cls]['content'];
+					style=document.createElement('div');
+					style.innerHTML='课程性质:'+this_['class'][cls]['style'];
+					box.appendChild(classname);
+					box.appendChild(teachername);
+					box.appendChild(address);
+					box.appendChild(content);
+					box.appendChild(style);
+					cl=document.getElementById('c'+jcdm).children[i];
+					cl.rowSpan=this_['class'][cls]['lengthoftime'];
+					for(j=1,nextcl=document.getElementById('c'+jcdm).nextElementSibling;j<cl.rowSpan;j++,nextcl=nextcl.nextElementSibling){
+						if(cl.childElementCount==0)
+							try{
+								nextcl.removeChild(nextcl.children[i])
+							}catch(e){
+								nextcl.removeChild(nextcl.children[nextcl.childElementCount-1])
+							}
+					}
+					cl.appendChild(box)
+					cl.className='content'
+
+					
+				}
+			}
+		}
+	}
+	xmlhttp.open("POST","get_class.php");
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send('value='+value);
+	console.log('value='+value)
+}
+function gettime(obj){
+	switch(obj.xqmc){
+		case '1':week='一';break;
+		case '2':week='二';break;
+		case '3':week='三';break;
+		case '4':week='四';break;
+		case '5':week='五';break;
+		case '6':week='六';break;
+		case '7':week='日';break;
+		default:week='错误';break;
+	}
+	rq=obj.rq.split('-');
+	rq=rq[1]+'/'+rq[2];
+	return [week,rq].join(' ');
+}
+function change(value){
+	url=[location.origin,location.pathname,'?value=',value].join('');
+	location.href=url;
+}
+function today(){
+
+}
+url=[location.origin,location.pathname,'?value='].join('');
+if(location.href.split(url).length==2)
+	v=location.href.split(url)[1]
+else
+	v=1
+document.getElementById('select').value=v;
+ajax(v)
+</script>
+</body>
+</html>

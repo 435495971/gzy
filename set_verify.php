@@ -11,5 +11,5 @@ else
 $result=request_post('http://210.38.108.23/login!doLogin.action',$post,$cookie);
 $result=json_decode($result['content']);
 if($result->status == 'y')
-	echo "成功登录";
+	echo '<script type="text/javascript">location.href="use.html"</script>';
 ?>
