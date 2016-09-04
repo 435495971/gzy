@@ -1,9 +1,11 @@
 <?php
 session_start();
 require('curl.php');
+if(!isset($_POST['year']))
+	$_POST['year']="20161";
 $cookie=$_SESSION['cookie'];
 {
-	$url='http://210.38.108.23/xsgrkbcx!getKbRq.action?xnxqdm=20161&zc='.$_POST['value'];
+	$url='http://210.38.108.23/xsgrkbcx!getKbRq.action?xnxqdm='.$_POST['year'].'&zc='.$_POST['value'];
 	$result=get_Web_Page($url,$cookie);
 	$result=json_decode($result['content']);
 	$date=$result[1];
