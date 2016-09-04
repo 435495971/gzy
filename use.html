@@ -254,8 +254,8 @@ function ajax(value){
 	}
 	xmlhttp.open("POST","get_class.php");
 	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	xmlhttp.send('value='+value);
-	console.log('value='+value)
+	xmlhttp.send('week='+value);
+	console.log('week='+value)
 }
 function gettime(obj){
 	switch(obj.xqmc){
@@ -273,13 +273,13 @@ function gettime(obj){
 	return [week,rq].join(' ');
 }
 function change(value){
-	url=[location.origin,location.pathname,'?value=',value].join('');
+	url=[location.origin,location.pathname,'?week=',value].join('');
 	location.href=url;
 }
 function today(){
 
 }
-url=[location.origin,location.pathname,'?value='].join('');
+url=[location.origin,location.pathname,'?week='].join('');
 if(location.href.split(url).length==2)
 	v=location.href.split(url)[1]
 else
