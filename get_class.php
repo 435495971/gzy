@@ -22,7 +22,7 @@ $cookie=$_SESSION['cookie'];
 		$v->dayinweek=$value->xq;
 		$v->address=$value->jxcdmc;
 		$v->content=$value->sknrjj;
-		$v->lengthoftime=$value->xs;
+		$v->lengthoftime=strlen($value->jcdm)/2;
 		$v->style=$value->jxhjmc;
 		$result[$value->xq]['class'][]=$v;
 	}
