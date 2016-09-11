@@ -10,7 +10,7 @@ if(!preg_match('/id="verifyDiv" style="display:none;"/iU',$result['content'],$st
 	$img=get_img('http://210.38.108.23/yzm?d='.time(),$cookie);	
 }
 else{
-	$img=get_img('http://119.29.238.68/wechat/no_verify.png');
+	$img=get_img('http://119.29.238.68/gzy/no_verify.png');
 	$_SESSION['verify']=false;
 }
 echo $img['content'];
