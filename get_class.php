@@ -30,6 +30,15 @@ $cookie=$_SESSION['cookie'];
 	$k=0;
 	foreach ($result as  $xq){
 		$k++;
+		if($k==1 && $xq['date']->xqmc==1){
+		$time=$xq['date']->rq;
+		$re=strtotime($time)-60*60*24;
+		$date=new stdClass();
+		$date->xqmc='7';
+		$date->rq=date('y-m-d',$re);
+		$newresult['key'.$k]['date']=$date;
+		$k++;
+		}
 		for($i=0;$i<count(@$xq['class']);$i++){
 			$key=$i;
 			for($j=$i;$j<count($xq['class']);$j++){
@@ -44,6 +53,7 @@ $cookie=$_SESSION['cookie'];
 		}
 		$newresult['key'.$k]=$xq;
 	}
+
 	$newresult['length']=count($newresult);
 	echo json_encode($newresult,JSON_UNESCAPED_UNICODE);
 }
