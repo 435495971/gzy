@@ -10,7 +10,7 @@
 	</style>
 </head>
 <body>
-<table border="1">
+<table border="1" id='table'>
 	<tr>
 		<td colspan="8">
 		<button>上一周</button>
@@ -42,156 +42,6 @@
 		</select>
 		</td>
 	</tr>
-	<tr id="title">
-		<td class="title"></td>
-		<td class="title"></td>
-		<td class="title"></td>
-		<td class="title"></td>
-		<td class="title"></td>
-		<td class="title"></td>
-		<td class="title"></td>
-		<td class="title"></td>
-	</tr>
-	<tr id="c01">
-		<td class="left">第01节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c02">
-		<td class="left">第02节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c03">
-		<td class="left">第03节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c04">
-		<td class="left">第04节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c05">
-		<td class="left">第05节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c06">
-		<td class="left">第06节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c07">
-		<td class="left">第07节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c08">
-		<td class="left">第08节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c09">
-		<td class="left">第09节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c10">
-		<td class="left">第10节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c11">
-		<td class="left">第11节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c12">
-		<td class="left">第12节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c13">
-		<td class="left">第13节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
-	<tr id="c14">
-		<td class="left">第14节</td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-		<td class="white"></td>
-	</tr>
 </table>
 <script type="text/javascript">
 function ajax(value){
@@ -212,46 +62,103 @@ function ajax(value){
 			catch(e){
 				alert("哎哟，一不小心出错了"+xmlhttp.responseText);
 			}
-			for(i=1;i<=obj.length;i++){
-				this_=obj['key'+i]
-				document.getElementById('title').children[i].innerHTML=gettime(this_['date'])
-				document.getElementById('title').children[i].id=this_['date'].xqmc;
-				for(cls in this_['class']){
-					jcdm=this_['class'][cls]['jcdm'].substr(0,2);
-					box=document.createElement('div');
-					teachername=document.createElement('div');
-					teachername.innerHTML='教师：'+this_['class'][cls]['teachername'];
-					classname=document.createElement('div');
-					classname.innerHTML='课程:'+this_['class'][cls]['classname'];
-					address=document.createElement('div');
-					address.innerHTML='地址:'+this_['class'][cls]['address'];
-					content=document.createElement('div');
-					content.innerHTML='授课内容:'+this_['class'][cls]['content'];
-					style=document.createElement('div');
-					style.innerHTML='课程性质:'+this_['class'][cls]['style'];
-					box.appendChild(classname);
-					box.appendChild(teachername);
-					box.appendChild(address);
-					box.appendChild(content);
-					box.appendChild(style);
-					cl=document.getElementById('c'+jcdm).children[i];
-					cl.rowSpan=this_['class'][cls]['lengthoftime'];
-					for(j=1,nextcl=document.getElementById('c'+jcdm).nextElementSibling;j<cl.rowSpan;j++,nextcl=nextcl.nextElementSibling){
-						if(cl.childElementCount==0)
-							try{
-								nextcl.removeChild(nextcl.children[i])
-							}catch(e){
-								nextcl.removeChild(nextcl.children[nextcl.childElementCount-1])
-							}
+			table=document.getElementById('table');
+			for(var j=0;j<15;j++){
+				tr=document.createElement('tr')
+				tr.id='tr'+(j+1)
+				td=document.createElement('td')
+				td.id='td1'+j
+				if(j!=0)
+					td.innerHTML='第'+j+'节'
+				else
+					td.innerHTML=''
+				td.className='white'
+				tr.appendChild(td)
+				table.appendChild(tr);
+			}
+			for(var i=0;i<8;i++){
+					tr=document.getElementById('tr1');
+					td=document.createElement('td');
+					td.id='title'+i
+					if(i!=0){
+						date=obj['key'+i]['date'];
+						td.innerHTML=gettime(date);
+						td.className='white'
+						tr.appendChild(td)					
 					}
-					cl.appendChild(box)
-					cl.className='content'
-
-					
+			}
+			for(var i=1;i<8;i++){
+				items=obj['key'+i]
+				flag=!('class' in items)
+				if(!flag){
+					length=items['class'].length
+					now=0
+				}
+				for(var j=1;j<15;j++){
+					if(flag){
+						tr=document.getElementById('tr'+(j+1));
+						td=document.createElement('td');
+						td.id='td'+(j)*10+i
+						td.className='white'
+						tr.appendChild(td)
+						continue
+					}else{
+						item=items['class'][now]
+						tr=document.getElementById('tr'+(j+1));
+						td=document.createElement('td');
+						td.id='td'+(j+1)*10+i
+						if(document.getElementById(td.id))
+							plural=true
+						else
+							plural=false
+						if(item['jcdm'][1]==j || (item['jcdm'][0]+item['jcdm'][1])==j){
+							
+							td.className='content'
+							td.rowSpan=item['lengthoftime']
+							box=document.createElement('div');
+							teachername=document.createElement('div');
+							teachername.innerHTML='教师：'+item['teachername'];
+							classname=document.createElement('div');
+							classname.innerHTML='课程:'+item['classname'];
+							address=document.createElement('div');
+							address.innerHTML='地址:'+item['address'];
+							content=document.createElement('div');
+							content.innerHTML='授课内容:'+item['content'];
+							style=document.createElement('div');
+							style.innerHTML='课程性质:'+item['style'];
+							box.appendChild(classname);
+							box.appendChild(teachername);
+							box.appendChild(address);
+							box.appendChild(content);
+							box.appendChild(style);
+							if(!plural){
+								td.appendChild(box)
+								tr.appendChild(td)								
+							}					
+							else{
+								td=document.getElementById(td.id)
+								td.appendChild(box)
+							}
+							if(now<length-1){
+								now++
+								item=items['class'][now]
+								if(item['jcdm'][1]==j || (item['jcdm'][0]+item['jcdm'][1])==j)
+									j--
+								else
+									j+=(td.rowSpan-1)
+							}else
+								j+=(td.rowSpan-1)
+							
+						}else{
+							console.log(item['jcdm'].indexOf(j))
+							td.className='white'
+							tr.appendChild(td)
+						}
+					}
 				}
 			}
 		}
-	}
+	}	
 	xmlhttp.open("POST","get_class.php");
 	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xmlhttp.send('week='+value);

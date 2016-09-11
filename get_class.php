@@ -51,7 +51,10 @@ $cookie=$_SESSION['cookie'];
 				$xq['class'][$key]=$tmp;
 			}
 		}
-		$newresult['key'.$k]=$xq;
+		if($xq['date']->xqmc==7)
+			$newresult['key1']=$xq;
+		else
+			$newresult['key'.($xq['date']->xqmc+1)]=$xq;
 	}
 
 	$newresult['length']=count($newresult);
