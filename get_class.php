@@ -16,7 +16,7 @@ $cookie=$_SESSION['cookie'];
 	}
 	foreach ($class as $value) {
 		$v=new stdClass();
-		$v->jcdm=$value->jcdm;
+		$v->jcdm=substr($value->jcdm, 0,2);
 		$v->classname=$value->kcmc;
 		$v->teachername=$value->teaxms;
 		$v->dayinweek=$value->xq;
@@ -42,7 +42,7 @@ $cookie=$_SESSION['cookie'];
 		for($i=0;$i<count(@$xq['class']);$i++){
 			$key=$i;
 			for($j=$i;$j<count($xq['class']);$j++){
-				if($xq['class'][$key]->jcdm > $xq['class'][$j]->jcdm)
+				if(intval($xq['class'][$key]->jcdm) > intval($xq['class'][$j]->jcdm))
 					$key=$j;
 			}
 			if($key!=$i){
