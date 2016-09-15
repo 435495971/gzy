@@ -17,7 +17,7 @@ $cookie=$_SESSION['cookie'];
 	foreach ($class as $value) {
 		$v=new stdClass();
 		$v->jcdm=substr($value->jcdm, 0,2);
-		$v->classname=$value->kcmc;
+		$v->classname=$value->kcmc=="毛泽东思想和中国特色社会主义理论体系概论"?"毛概":$value->kcmc;
 		$v->teachername=$value->teaxms;
 		$v->dayinweek=$value->xq;
 		$v->address=$value->jxcdmc;
